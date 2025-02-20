@@ -38,17 +38,8 @@ AWS EKS cluster set up
 
 Clone the repository
 
-git clone https://github.com/your-repo/cloud-monitoring-app.git
-cd cloud-monitoring-app
-
 Build and push Docker image
-
-docker build -t my-monitoring-app .
-docker tag my-monitoring-app:latest <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-monitoring-app:latest
-docker push <AWS_ACCOUNT_ID>.dkr.ecr.<AWS_REGION>.amazonaws.com/my-monitoring-app:latest
 
 Deploy to Kubernetes (AWS EKS)
 
-kubectl apply -f deployment.yaml
-kubectl apply -f service.yaml
 
