@@ -41,12 +41,4 @@ cd Cloud-Native-Monitoring
 # 2. Build and tag Docker image
 docker build -t cloud-monitoring-app .
 
-# 3. Push to AWS ECR
-aws ecr get-login-password | docker login --username AWS --password-stdin <your_ecr_repo_url>
-docker tag cloud-monitoring-app <your_ecr_repo_url>
-docker push <your_ecr_repo_url>
-
-# 4. Deploy to EKS using kubectl
-kubectl apply -f k8s/
-
 
