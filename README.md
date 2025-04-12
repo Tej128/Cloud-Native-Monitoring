@@ -19,7 +19,6 @@ This project demonstrates a cloud-native monitoring application built with **Fla
 - **Docker**
 - **Kubernetes** on **AWS EKS**
 - **AWS ECR**
-- Optional: Prometheus/Grafana (if added later)
 
 ---
 
