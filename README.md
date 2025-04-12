@@ -1,45 +1,53 @@
-# Cloud-Native-Monitoring
+# 📊 Cloud-Native Monitoring App (Flask + Docker + AWS EKS)
 
-#Overview
+This project demonstrates a cloud-native monitoring application built with **Flask**, containerized using **Docker**, and deployed on **AWS EKS** using **Kubernetes**. It tracks system metrics like CPU and memory in real time.
 
-A Python-based cloud-native monitoring application built with Flask to track CPU and memory usage. The application is containerized with Docker and deployed on an AWS EKS cluster using Kubernetes for scalability and reliability.
+---
 
-#Features
+## 🚀 Features
 
-Real-time Monitoring: Tracks system CPU and memory usage.
+- 📈 **Real-time Monitoring**: View CPU and memory usage instantly
+- 🐳 **Containerized**: Dockerized for portable, repeatable deployments
+- ☁️ **Cloud-Native**: Runs on AWS EKS with Kubernetes orchestration
+- 📦 **ECR Integration**: Uses AWS Elastic Container Registry for image storage
 
-Containerized Deployment: Packaged with Docker for seamless portability.
+---
 
-Kubernetes Orchestration: Deployed on AWS EKS for high availability and scalability.
+## 🔧 Tech Stack
 
-#Tech Stack
+- **Python (Flask)**
+- **Docker**
+- **Kubernetes** on **AWS EKS**
+- **AWS ECR**
+- Optional: Prometheus/Grafana (if added later)
 
-1.Python (Flask for backend)
+---
 
-2.Docker (Containerization)
+## ⚙️ Getting Started
 
-3.Kubernetes (Orchestration on AWS EKS)
+### 🔑 Prerequisites
 
-4,AWS ECR (Container Registry for storing images)
+- Docker installed
+- AWS CLI configured
+- `kubectl` installed and connected to an EKS cluster
+- AWS ECR repository created
 
-#Setup & Deployment
+### 🛠️ Steps
 
-Prerequisites
+```bash
+# 1. Clone the repository
+git clone https://github.com/Tej128/Cloud-Native-Monitoring.git
+cd Cloud-Native-Monitoring
 
-Docker installed
+# 2. Build and tag Docker image
+docker build -t cloud-monitoring-app .
 
-AWS CLI configured
+# 3. Push to AWS ECR
+aws ecr get-login-password | docker login --username AWS --password-stdin <your_ecr_repo_url>
+docker tag cloud-monitoring-app <your_ecr_repo_url>
+docker push <your_ecr_repo_url>
 
-Kubernetes (kubectl) installed
-
-AWS EKS cluster set up
-
-#Steps
-
-Clone the repository
-
-Build and push Docker image
-
-Deploy to Kubernetes (AWS EKS)
+# 4. Deploy to EKS using kubectl
+kubectl apply -f k8s/
 
 
